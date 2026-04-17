@@ -1,0 +1,186 @@
+---
+// Header.astro
+---
+
+<header class="header">
+  <div class="header__wrapper">
+    <a href="/" class="header__logo" aria-label="Uge 44 - gå til forsiden">
+      <img src="/public/imgs/simpellogo.png" alt="Uge 44" width="64" height="52" />
+    </a>
+
+    <div class="header__inner">
+      <button class="header__hamburger" id="hamburger-btn" aria-label="Åbn menu" aria-expanded="false" aria-controls="main-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+
+  <nav class="header__nav" id="main-nav" aria-label="Primær navigation">
+    <a href="/eventkalender" class="header__nav-link">Eventkalender</a>
+    <a href="/tag-snakken" class="header__nav-link">Tag snakken</a>
+    <a href="/arrangortilmelding" class="header__nav-link">Arrangørtilmelding</a>
+    <a href="/sorggruppe" class="header__nav-link">Sorggruppe</a>
+  </nav>
+</header>
+
+<style>
+  /* === MOBILE === */
+  .header {
+    position: absolute; /* eller fixed hvis den skal følge scroll */
+    width: 100%;
+    z-index: 10;
+
+    background: transparent; /* vigtig! */
+  }
+
+  .header__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .header__logo img {
+    display: block;
+    height: 52px;
+    width: auto;
+    flex-shrink: 0;
+  }
+
+  .header__inner {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background: #dce5fd;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 9999px;
+    padding: 0.6rem 1.25rem;
+  }
+
+  .header__hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .header__hamburger span {
+    display: block;
+    width: 24px;
+    height: 2.5px;
+    background-color: #1a2e6e;
+    border-radius: 2px;
+    transition:
+      transform 0.25s ease,
+      opacity 0.25s ease;
+  }
+
+  .header__hamburger[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(7.5px) rotate(45deg);
+  }
+  .header__hamburger[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+  .header__hamburger[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-7.5px) rotate(-45deg);
+  }
+
+  .header__nav {
+    display: none;
+    flex-direction: column;
+    background: rgba(220, 228, 255, 0.97);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 1.25rem;
+    padding: 0.75rem 0;
+    margin-top: 0.5rem;
+  }
+
+  .header__nav.is-open {
+    display: flex;
+  }
+
+  .header__nav-link {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a2e6e;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    transition: background 0.15s ease;
+  }
+
+  .header__nav-link:hover {
+    background: rgba(255, 255, 255, 0.4);
+  }
+
+  /* === DESKTOP === */
+  @media (min-width: 768px) {
+    .header {
+      padding: 0.75rem 2rem;
+    }
+
+    .header__inner {
+      padding: 0.75rem 2rem;
+    }
+
+    .header__hamburger {
+      display: none;
+    }
+
+    .header__nav {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 2.5rem;
+      background: none;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      border-radius: 0;
+      padding: 0;
+      margin-top: 0;
+      position: absolute;
+      top: 50%;
+      right: 4rem;
+      transform: translateY(-50%);
+    }
+
+    .header__nav-link {
+      font-size: 0.9375rem;
+      padding: 0;
+      white-space: nowrap;
+    }
+
+    .header__nav-link:hover {
+      background: none;
+      opacity: 0.7;
+    }
+  }
+</style>
+
+<script>
+  const btn = document.getElementById("hamburger-btn");
+  const nav = document.getElementById("main-nav");
+
+  btn?.addEventListener("click", () => {
+    const isOpen = nav?.classList.toggle("is-open");
+    btn.setAttribute("aria-expanded", String(isOpen));
+    btn.setAttribute("aria-label", isOpen ? "Luk menu" : "Åbn menu");
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!btn?.contains(e.target as Node) && !nav?.contains(e.target as Node)) {
+      nav?.classList.remove("is-open");
+      btn?.setAttribute("aria-expanded", "false");
+      btn?.setAttribute("aria-label", "Åbn menu");
+    }
+  });
+</script>
