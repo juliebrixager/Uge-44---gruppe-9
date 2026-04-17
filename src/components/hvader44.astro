@@ -1,0 +1,104 @@
+---
+import "../styles/global.css";
+const orangeFigure = "/imgs/orange-figure.png";
+---
+
+<section class="info">
+  <div class="info__container">
+    <h2>
+      En uge med fokus på døden<br />
+      Hvad og hvorfor?
+    </h2>
+
+    <p>Hvert år sætter Landsforeningen Liv&Død landsdækkende fokus på døden i uge 44 gennem indsatser, der går på tværs af kultur, sundhed og læring. Og du kan blive en del af kampagnen!</p>
+
+    <p>
+      Uge 44 – Fokus på døden, er en kampagne der sætter døden på dagsordenen og skaber en fælles anledning til at tale om liv og død. Initiativet samler mennesker om et emne, som berører os alle før eller siden. Rundt i landet afholdes der
+      forskellige arrangementer og aktiviteter i uge 44.
+    </p>
+
+    <p>Formålet er at gøre døden mere nærværende og naturlig at tale om.</p>
+
+    <div class="info__icon">
+      <img src="/imgs/orange-figur-6.png" alt="" />
+    </div>
+
+    <h3>
+      At kunne støtte og hjælpe<br />
+      en bekendt i sorg
+    </h3>
+
+    <p>Vi sætter fokus på, hvordan vi bedre kan støtte og forstå mennesker i sorg. Gennem viden og samtaler gør vi det lettere at forstå sorgen og turde række ud.</p>
+
+    <p>Når vi taler åbent om døden, bliver vi bedre til at være der for hinanden.</p>
+  </div>
+</section>
+
+<style>
+  .info {
+    background: #FFFDF9 /* lys grå */
+    padding: 3rem 1.5rem;
+  }
+
+  .info__container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* Overskrifter */
+  .info h2 {
+    color: #2f4fa2;
+    font-size: 1.4rem;
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+  }
+
+  .info h3 {
+    color: #2f4fa2;
+    font-size: 1.3rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Brødtekst */
+  .info p {
+    color: #2f4fa2;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  /* Orange ikon */
+  .info__icon {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+  }
+
+  .info__icon img {
+    width: 60px;
+    height: auto;
+  }
+
+  @media (min-width: 768px) {
+    .info {
+      padding: 5rem 2rem;
+    }
+
+    .info h2 {
+      font-size: 2rem;
+    }
+
+    .info h3 {
+      font-size: 1.6rem;
+    }
+
+    .info p {
+      font-size: 1.05rem;
+    }
+
+    .info__icon img {
+      width: 80px;
+    }
+  }
+</style>
