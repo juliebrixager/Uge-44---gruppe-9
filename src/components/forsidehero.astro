@@ -1,0 +1,67 @@
+---
+import "../styles/global.css";
+---
+
+<section class="hero">
+  <div class="hero__center">
+    <img src="/imgs/herologo.png" alt="UGE 44 fokus på døden" class="hero__logo" />
+  </div>
+
+  <div class="hero__image">
+    <img src="/imgs/herokramblå.png" alt="" />
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    background: #bcceff;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 1.5rem;
+
+    /* plads til header så logo ikke ryger op under */
+    padding-top: 100px;
+  }
+
+  /* centrer logo vertikalt-ish */
+  .hero__center {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* logo styling */
+  .hero__logo {
+    width: 160px;
+    height: auto;
+  }
+
+  /* illustration i bunden */
+  .hero__image {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .hero__image img {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+  }
+
+  @media (min-width: 768px) {
+    .hero__logo {
+      width: 300px;
+    }
+
+    .hero__image img {
+      max-width: 600px;
+    }
+  }
+</style>
