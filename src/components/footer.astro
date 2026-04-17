@@ -9,4 +9,44 @@
     <p>Facebook</p>
     <p>Instagram</p>
     <img src="/public/imgs/simpellogo.png" alt="Logo" />
+    <section class="info">
+        <div>
+            <p>Har du spørgsmål?</p>
+            <a href="mailto:info@livogdoed.dk" class="btn">Send os en mail</a>
+        </div>
+        <div>
+            <p>Uge 44 - fokus på døden</p>
+            <p>Facebook</p>
+            <p>Instagram</p>
+        </div>
+    </section>
+    <img src="/imgs/simpellogo.png" alt="Logo" />
 </footer>
+
+<style>
+    footer {
+        background-color: #bcceff;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+    .info {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    img {
+        align-self: flex-end;
+    }
+    p {
+        color: #1a4096;
+        padding: 5px;
+    }
+
+    @media screen and (min-width: 768px) {
+        footer {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+</style>
