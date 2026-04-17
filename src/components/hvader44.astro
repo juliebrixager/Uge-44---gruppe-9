@@ -1,6 +1,5 @@
 ---
 import "../styles/global.css";
-const orangeFigure = "/imgs/orange-figure.png";
 ---
 
 <section class="info">
@@ -36,12 +35,13 @@ const orangeFigure = "/imgs/orange-figure.png";
 
 <style>
   .info {
-    background: #FFFDF9 /* lys grå */
-    padding: 3rem 1.5rem;
+    background: #fffdf9; /* lys grå */
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
 
   .info__container {
-    max-width: 600px;
+    max-width: 350px;
     margin: 0 auto;
   }
 
@@ -76,13 +76,17 @@ const orangeFigure = "/imgs/orange-figure.png";
   }
 
   .info__icon img {
-    width: 60px;
+    width: 70px;
     height: auto;
   }
 
   @media (min-width: 768px) {
     .info {
       padding: 5rem 2rem;
+    }
+
+    .info__container {
+      max-width: 1000px;
     }
 
     .info h2 {
@@ -98,7 +102,8 @@ const orangeFigure = "/imgs/orange-figure.png";
     }
 
     .info__icon img {
-      width: 80px;
+      width: 200px;
+      padding: 50px;
     }
   }
 </style>

@@ -1,0 +1,131 @@
+---
+const people = [
+  {
+    name: "Vibeke",
+    fullName: "Sonntag Larsen",
+    role: "Sekretariatschef",
+    image: "/imgs/vibeke.png",
+  },
+  {
+    name: "Nanna",
+    fullName: "de Hemmer Widding",
+    role: "Kultur- og udviklingskonsulent",
+    image: "/imgs/nanna.png",
+  },
+  {
+    name: "Eva",
+    fullName: "Gerlif Myrture",
+    role: "Kommunikations- og udviklingskonsulent",
+    image: "/imgs/eva.png",
+  },
+];
+---
+
+<section class="team">
+  <div class="hvemerviintro">
+    <h2>Hvem er vi?</h2>
+    <p class="team__intro">En lille (men ambitiøs) forening, der arbejder kreativt med forskellige samtale- og reflektionsstartere, for at starte et dødens kultur- og videnscenter i Danmark.</p>
+  </div>
+  <div class="team__container">
+    {
+      people.map((person) => (
+        <div class="team__card">
+          <h3 class="team__name">{person.name}</h3>
+          <p class="team__fullname">{person.fullName}</p>
+
+          <img src={person.image} alt={person.name} class="team__image" />
+
+          <p class="team__role">{person.role}</p>
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .team {
+    background: #fff2a8; /* gul baggrund */
+    padding: 3rem 1.5rem;
+  }
+
+  .hvemerviintro {
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  .team__intro {
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    color: #2f4fa2;
+  }
+  .team__container {
+    max-width: 250px;
+    margin: 0 auto;
+  }
+
+  /* Titel */
+  .team h2 {
+    color: #2f4fa2;
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  /* Card spacing */
+  .team__card {
+    margin-bottom: 3rem;
+  }
+
+  /* Navn */
+  .team__name {
+    color: #2f4fa2;
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+
+  /* Fulde navn */
+  .team__fullname {
+    color: #2f4fa2;
+    margin-bottom: 1rem;
+  }
+
+  /* Billede */
+  .team__image {
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* Rolle */
+  .team__role {
+    color: #2f4fa2;
+    margin-top: 0.8rem;
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    .team__container {
+      max-width: 1100px; /* gør plads til 3 kolonner */
+    }
+
+    .team__container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .team h2 {
+      grid-column: 1 / -1; /* titel går over alle kolonner */
+    }
+    .team__intro {
+      max-width: 700px;
+      margin-bottom: 3rem;
+    }
+
+    .hvemerviintro {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+</style>

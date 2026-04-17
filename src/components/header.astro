@@ -28,24 +28,39 @@
 <style>
   /* === MOBILE === */
   .header {
-    position: absolute; /* eller fixed hvis den skal følge scroll */
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    z-index: 10;
+    z-index: 100;
 
-    background: transparent; /* vigtig! */
+    padding: 0; /* 🔥 fjern */
   }
 
   .header__wrapper {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    justify-content: space-between;
+
+    padding: 1rem; /* 🔥 flyt den herind */
+  }
+
+  .header-inner {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 999px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0.75rem 1.25rem;
   }
 
   .header__logo img {
     display: block;
-    height: 52px;
+    height: 60px;
     width: auto;
-    flex-shrink: 0;
+    padding-right: 10px;
   }
 
   .header__inner {

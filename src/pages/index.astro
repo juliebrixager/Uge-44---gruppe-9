@@ -1,13 +1,15 @@
 ---
-const logo = "/images/uge44-logo.png"; // dit PNG logo
-const illustration = "/images/hero-illustration.png";
+const logo = "/imgs/uge44-logo.png"; // dit PNG logo
+const illustration = "/imgs/hero-illustration.png";
 import "../styles/global.css";
 import PageLayout from "../layouts/PageLayout.astro";
 import Forsidehero from "../components/forsidehero.astro";
 import Hvader44 from "../components/hvader44.astro";
+import Hvemervi from "../components/hvemervi.astro";
 ---
 
-<PageLayout>
+<PageLayout heading="Forside">
   <Forsidehero />
   <Hvader44 />
+  <Hvemervi />
 </PageLayout>
