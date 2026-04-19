@@ -1,8 +1,51 @@
 ---
 import "../styles/global.css";
 import PageLayout from "../layouts/PageLayout.astro";
+import Introduktion from "../components/introduktion.astro";
+import Aktivitet from "../components/aktivitetCard.astro";
 ---
 
 <PageLayout heading="Arrangør tilmelding">
-    <p>Er du arrangør og vil gerne tilmelde dig Uge 44, så kan du gøre det ved at udfylde</p>
+    <Introduktion />
+    <section>
+        <Aktivitet
+            billede="../public/imgs/terninger.png"
+            titel="Brætspil"
+            tekst="At spille brætspil kan være en god måde at være sammen på uden, at samtalen bliver for tung. Fokus er på spillet, men der er stadig plads til små snakke undervejs. Det kan gøre det lettere at åbne op, hvis man har lyst."
+        />
+        <Aktivitet
+            billede="../public/imgs/håndarbejde.png"
+            titel="Håndarbejde"
+            tekst="Håndarbejde som at strikke, tegne eller lave kreative projekter kan give ro og skabe en tryg ramme for samtaler. Når hænderne er i gang, kan det føles nemmere at sætte ord på svære følelser, eller bare være stille sammen."
+        />
+        <Aktivitet
+            billede="../public/imgs/gåtur.png"
+            titel="Gåture"
+            tekst="En gåtur kan gøre det lettere at tale om svære ting, fordi man ikke behøver at have øjenkontakt hele tiden. Naturen kan samtidig virke beroligende og give lidt luft til tankerne. I kan gå en tur i skoven, ved vandet eller i nærområdet."
+        />
+        <Aktivitet
+            billede="../public/imgs/madlavning.png"
+            titel="Madlavning"
+            tekst="At lave mad sammen giver et fælles fokus og en følelse af at skabe noget sammen. Samtalen kan opstå naturligt undervejs, men der er også plads til pauser. Det kan være en god aktivitet, hvis det føles svært at sætte sig ned og tale direkte."
+        />
+    </section>
 </PageLayout>
+
+<style>
+    section {
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+        padding: 2rem;
+    }
+
+    @media screen and (min-width: 768px) {
+        section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-template-rows: auto;
+            gap: 80px;
+            padding: 6rem;
+        }
+    }
+</style>
