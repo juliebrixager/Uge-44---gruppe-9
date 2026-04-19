@@ -28,31 +28,23 @@
 <style>
   /* === MOBILE === */
   .header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 100;
-
-    padding: 0; /* 🔥 fjern */
+    position: sticky;
+    background-color: #bcceff;
   }
 
   .header__wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    padding: 1rem; /* 🔥 flyt den herind */
+    padding: 1rem;
   }
 
   .header-inner {
     background: rgba(255, 255, 255, 0.4);
     border-radius: 999px;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     padding: 0.75rem 1.25rem;
   }
 
@@ -144,7 +136,7 @@
     }
 
     .header__inner {
-      padding: 0.75rem 2rem;
+      padding: 1.5rem 2rem;
     }
 
     .header__hamburger {
