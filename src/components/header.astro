@@ -1,5 +1,6 @@
 ---
 // Header.astro
+const currentPath = Astro.url.pathname;
 ---
 
 <header class="header">
@@ -17,11 +18,14 @@
     </div>
   </div>
 
-  <nav class="header__nav" id="main-nav" aria-label="Primær navigation">
-    <a href="/kalender" class="header__nav-link">Eventkalender</a>
-    <a href="/tagsnakken" class="header__nav-link">Tag snakken</a>
-    <a href="/arrangør" class="header__nav-link">Arrangørtilmelding</a>
-    <a href="/sorggruppe" class="header__nav-link">Sorggruppe</a>
+  <nav class="header__nav" id="main-nav">
+    <a href="/kalender" class={`header__nav-link ${currentPath === "/kalender" ? "active" : ""}`}> Eventkalender </a>
+
+    <a href="/tagsnakken" class={`header__nav-link ${currentPath === "/tagsnakken" ? "active" : ""}`}> Tag snakken </a>
+
+    <a href="/arrangør" class={`header__nav-link ${currentPath === "/arrangør" ? "active" : ""}`}> Arrangørtilmelding </a>
+
+    <a href="/sorggruppe" class={`header__nav-link ${currentPath === "/sorggruppe" ? "active" : ""}`}> Sorggruppe </a>
   </nav>
 </header>
 
@@ -130,6 +134,22 @@
     background: rgba(255, 255, 255, 0.4);
   }
 
+  .header__nav-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .header__nav-link.active::before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    background-image: url("/imgs/timeglas.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+  }
   /* === DESKTOP === */
   @media (min-width: 768px) {
     .header {
@@ -178,6 +198,23 @@
       width: auto;
       padding-right: 10px;
       padding-left: 0;
+    }
+
+    .header__nav-link {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .header__nav-link.active::before {
+      content: "";
+      width: 14px;
+      height: 14px;
+      background-image: url("/imgs/Timeglas.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      display: inline-block;
     }
   }
 </style>
