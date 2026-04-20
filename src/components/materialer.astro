@@ -19,25 +19,33 @@ import RundKnap from "./rundKnap.astro";
                 </svg>
             </button>
             <div class="accordion__indhold" hidden>
-                <div>
-                    <img src="" alt="" />
-                    <p>“En del af UGE 44” (med sort tekst)</p>
-                    <RundKnap href="https://livogdoed.dk/wp-content/uploads/En-del-af-UGE-44-logo-i-sort.png" tekst="Download logo" />
+                <div class="logo-item">
+                    <img src="../public/imgs/arrangørlogo2.svg" alt="En del af UGE 44 logo (med blå tekst)" />
+                    <div class="logo-item__tekst">
+                        <p>"En del af UGE 44" (med blå tekst)</p>
+                        <RundKnap href="https://livogdoed.dk/wp-content/uploads/En-del-af-UGE-44-logo-i-sort.png" tekst="Hent logo" target="_blank" />
+                    </div>
                 </div>
-                <div>
-                    <img src="../public/imgs/arrangørlogo.png" alt="“En del af UGE 44” logo(med hvid tekst) " />
-                    <p>“En del af UGE 44” (med hvid tekst)</p>
-                    <RundKnap href="https://livogdoed.dk/wp-content/uploads/En-del-af-UGE-44-logo-i-hvid.png" tekst="Download logo" />
+                <div class="logo-item">
+                    <img src="../public/imgs/arrangørlogo.svg" alt="En del af UGE 44 logo (med hvid tekst)" />
+                    <div class="logo-item__tekst">
+                        <p>"En del af UGE 44" (med hvid tekst)</p>
+                        <RundKnap href="https://livogdoed.dk/wp-content/uploads/En-del-af-UGE-44-logo-i-hvid.png" tekst="Hent logo" target="_blank" />
+                    </div>
                 </div>
-                <div>
-                    <img src="" alt="" />
-                    <p>UGE 44 logo (med sort tekst)</p>
-                    <RundKnap href="https://livogdoed.dk/wp-content/uploads/UGE-44-logo-i-sort.png" tekst="Download logo" />
+                <div class="logo-item">
+                    <img src="../public/imgs/herologo2.svg" alt="UGE 44 logo (med blå tekst)" />
+                    <div class="logo-item__tekst">
+                        <p>UGE 44 logo (med blå tekst)</p>
+                        <RundKnap href="https://livogdoed.dk/wp-content/uploads/UGE-44-logo-i-sort.png" tekst="Hent logo" target="_blank" />
+                    </div>
                 </div>
-                <div>
-                    <img src="../public/imgs/herologo.png" alt="UGE 44 logo (med hvid tekst)" />
-                    <p>UGE 44 logo (med hvid tekst)</p>
-                    <RundKnap href="https://livogdoed.dk/wp-content/uploads/UGE-44-logo-i-hvid.png" tekst="Download logo" />
+                <div class="logo-item">
+                    <img src="../public/imgs/herologo.svg" alt="UGE 44 logo (med hvid tekst)" />
+                    <div class="logo-item__tekst">
+                        <p>UGE 44 logo (med hvid tekst)</p>
+                        <RundKnap href="https://livogdoed.dk/wp-content/uploads/UGE-44-logo-i-hvid.png" tekst="Hent logo" target="_blank" />
+                    </div>
                 </div>
             </div>
         </div>
@@ -62,16 +70,25 @@ import RundKnap from "./rundKnap.astro";
                 </svg>
             </button>
             <div class="accordion__indhold" hidden>
-                <p>En oversigt over forskellige spillefilm, kortfilm og dokumentarer, der handler om døden.</p>
-                <RundKnap href="mailto:info@livogdoed.dk" tekst="Hent filmlisten" />
-                <p>En oversigt over forskellige digtsamlinger, børnebøger, skønlitteratur og beretninger om døden.</p>
-                <RundKnap href="mailto:info@livogdoed.dk" tekst="Hent filmlisten" />
+                <div class="inspiration-item">
+                    <p>En oversigt over forskellige spillefilm, kortfilm og dokumentarer, der handler om døden.</p>
+                    <RundKnap href="https://livogdoed.dk/wp-content/uploads/Filmliste.pdf" tekst="Hent filmlisten" target="_blank" />
+                </div>
+                <div class="inspiration-item">
+                    <p>En oversigt over forskellige digtsamlinger, børnebøger, skønlitteratur og beretninger om døden.</p>
+                    <RundKnap href="https://livogdoed.dk/wp-content/uploads/Bogliste.pdf" tekst="Hent boglisten" target="_blank" />
+                </div>
             </div>
         </div>
     </div>
 </section>
 
 <style>
+    .materiale__tekst {
+        margin: 2rem 4rem;
+        padding: 0 2rem;
+    }
+
     .materiale__tekst p {
         color: #1a2e6e;
         line-height: 1.6;
@@ -114,7 +131,36 @@ import RundKnap from "./rundKnap.astro";
 
     .accordion__indhold {
         padding: 0 1.5rem 1.5rem;
+        background-color: #d9d9d9;
         color: #1a2e6e;
+    }
+    .logo-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 2rem;
+        padding: 1rem 0;
+        border-bottom: 1px solid rgba(26, 46, 110, 0.15);
+    }
+
+    .logo-item img {
+        width: 150px;
+        height: auto;
+        flex-shrink: 0;
+    }
+
+    .logo-item__tekst {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .inspiration-item {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
     }
 </style>
 
