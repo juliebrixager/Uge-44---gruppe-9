@@ -3,81 +3,81 @@
 ---
 
 <section>
-    <div class="intro__tekst">
-        <h1>Arrangør tilmelding</h1>
-        <p>Har I lyst til at være arrangør i kampagneugen UGE 44, kan I på denne side tilmelde jer, samt hente relevant materiale til jeres arrangement.</p>
-    </div>
-    <div class="intro__billede">
-        <img class="boble boble--lys" src="../public/imgs/lilletalebobbel.png" alt="" aria-hidden="true" />
-        <img class="boble boble--mørk" src="../public/imgs/stortalebobbel.png" alt="" aria-hidden="true" />
-    </div>
+  <div class="intro__tekst">
+    <h1>Arrangør tilmelding</h1>
+    <p>Har I lyst til at være arrangør i kampagneugen UGE 44, kan I på denne side tilmelde jer, samt hente relevant materiale til jeres arrangement.</p>
+  </div>
+  <div class="intro__billede">
+    <img class="boble boble--lys" src="../public/imgs/lilletalebobbel.png" alt="" aria-hidden="true" />
+    <img class="boble boble--mørk" src="../public/imgs/stortalebobbel.png" alt="" aria-hidden="true" />
+  </div>
 </section>
 
 <style>
+  section {
+    background-color: #bcceff;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .intro__tekst h1 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+  .intro__tekst p {
+    color: #1a4096;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .intro__billede {
+    position: relative;
+    height: 200px;
+  }
+
+  .boble {
+    position: absolute;
+    width: 130px;
+    height: auto;
+  }
+
+  .boble--lys {
+    top: 0;
+    right: 0;
+  }
+
+  .boble--mørk {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @media (min-width: 768px) {
     section {
-        background-color: #bcceff;
-        display: grid;
-        grid-template-columns: 1fr;
-        align-items: center;
-        padding: 2rem;
-        gap: 2rem;
+      grid-template-columns: 1fr 1fr;
+      padding: 3rem 6rem;
     }
 
     .intro__tekst h1 {
-        font-size: 1.75rem;
-        font-weight: 800;
-        color: white;
-        margin-bottom: 1rem;
+      font-size: 2.5rem;
     }
 
     .intro__tekst p {
-        color: #1a4096;
-        font-size: 1rem;
-        line-height: 1.6;
+      max-width: 650px;
     }
 
     .intro__billede {
-        position: relative;
-        height: 200px;
+      height: 300px;
     }
 
     .boble {
-        position: absolute;
-        width: 130px;
-        height: auto;
+      width: 220px;
     }
-
-    .boble--lys {
-        top: 0;
-        right: 0;
-    }
-
-    .boble--mørk {
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    @media (min-width: 768px) {
-        section {
-            grid-template-columns: 1fr 1fr;
-            padding: 3rem 6rem;
-        }
-
-        .intro__tekst h1 {
-            font-size: 2.5rem;
-        }
-
-        .intro__tekst p {
-            max-width: 650px;
-        }
-
-        .intro__billede {
-            height: 300px;
-        }
-
-        .boble {
-            width: 220px;
-        }
-    }
+  }
 </style>
