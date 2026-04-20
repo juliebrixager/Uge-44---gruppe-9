@@ -1,8 +1,8 @@
 ---
-const { tekst, href, variant = "orange" } = Astro.props;
+const { tekst, href, variant = "orange", target = "_self" } = Astro.props;
 ---
 
-<a href={href} class={`btn btn--${variant}`}>
+<a href={href} class={`btn btn--${variant}`} target={target}>
   {tekst}
 </a>
 
