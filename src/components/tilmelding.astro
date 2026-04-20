@@ -1,0 +1,42 @@
+---
+import RundKnap from "./rundKnap.astro";
+---
+
+<section>
+    <h2>Tilmelding</h2>
+    <p>Hvis I allerede nu ved, at I har et event i kalenderen, og gerne vil være en del af kampagneugen, så vil vi med glæde inkludere jer i programmet for ugen.</p>
+    <p>
+        Det eneste, I skal gøre, er at indsætte logoet for UGE 44 på jeres arrangements hjemmeside, på grafikken hertil eller andetsteds, og dermed tilkendegive, at I er en del af kampagneugen UGE 44 - Fokus på døden. Når I har gjort det, så skriv
+        til info@livogdoed.dk - så får vi jer på listen!
+    </p>
+    <p>
+        Hvis I gerne vil være med i kampagnen, men endnu ikke har en idé til hvordan, så skriv til os på info@livogdoed.dk. Her kan I få tilsendt bog-, film-, og musiklister, idéer til mulige arrangementer mm. I kan også finde vores bog- og filmliste
+        nedenunder.
+    </p>
+    <div class="knap-wrapper">
+        <RundKnap href="mailto:info@livogdoed.dk" tekst="Send os en mail" variant="lys" />
+    </div>
+</section>
+
+<style>
+    section {
+        max-width: 500px;
+        margin: 4rem auto;
+        padding: 4rem;
+        background-color: #32487a;
+        border-radius: 20px;
+    }
+    h2 {
+        color: #ffffff;
+    }
+    p {
+        color: #ffffff;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+    .knap-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+    }
+</style>
