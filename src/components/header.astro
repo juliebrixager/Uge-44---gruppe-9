@@ -45,7 +45,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.75rem 1.25rem;
+    padding: 0.2rem 1.25rem;
   }
 
   .header__logo img {
@@ -53,6 +53,7 @@
     height: 60px;
     width: auto;
     padding-right: 10px;
+    padding-left: 0;
   }
 
   .header__inner {
@@ -132,7 +133,7 @@
   /* === DESKTOP === */
   @media (min-width: 768px) {
     .header {
-      padding: 0.75rem 2rem;
+      padding: 0.5rem 1rem;
     }
 
     .header__inner {
@@ -169,6 +170,14 @@
     .header__nav-link:hover {
       background: none;
       opacity: 0.7;
+    }
+
+    .header__logo img {
+      display: block;
+      height: 80px;
+      width: auto;
+      padding-right: 10px;
+      padding-left: 0;
     }
   }
 </style>
