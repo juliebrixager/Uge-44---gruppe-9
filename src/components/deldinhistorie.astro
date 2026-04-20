@@ -1,0 +1,77 @@
+---
+
+---
+
+<article class="background">
+  <!-- <h3>Har du lyst til at dele din historie?</h3>
+  <p>Send din historie ind til os, så du kan hjælpe andre</p> -->
+
+  <div class="flex">
+    <form>
+      <h3>Har du lyst til at dele din historie?</h3>
+      <p>Send din historie ind til os, så du kan hjælpe andre</p>
+      <div class="form">
+        <label>
+          <input placeholder="*Navn" type="text" name="navn" required />
+        </label>
+
+        <label>
+          <input placeholder="*Alder" type="text" name="alder" required />
+        </label>
+
+        <label>
+          <textarea placeholder="*Historie" name="besked" required></textarea>
+        </label>
+      </div>
+    </form>
+
+    <img src="/public/imgs/brev.png" alt="brev med ikon på af sillhouetter" />
+  </div>
+
+  <style>
+    .background {
+      background-color: #bcceff;
+      margin: 0;
+      padding: 3em 0;
+    }
+
+    @media screen and (width >= 800px) {
+      article {
+      }
+
+      .flex {
+        display: flex;
+        justify-content: space-evenly;
+        /* display: grid;
+        grid-template-columns: 1fr 1fr; */
+      }
+
+      .form {
+        display: flex;
+        flex-direction: column;
+        /* margin-left: 5em; */
+        margin-top: 1em;
+      }
+
+      input {
+        padding-right: 23em;
+        text-align: start;
+        padding-bottom: 0.8em;
+        margin-bottom: 1em;
+        border: 0;
+      }
+
+      textarea {
+        padding-right: 20em;
+        padding-bottom: 10em;
+        border: 0;
+      }
+
+      img {
+        max-width: 300px;
+        max-height: 200px;
+        align-self: center;
+      }
+    }
+  </style>
+</article>
