@@ -1,0 +1,36 @@
+---
+const { tekst, href, variant = "blaa" } = Astro.props;
+---
+
+<a href={href} class={`btn btn--${variant}`}>
+    {tekst}
+</a>
+
+<style>
+    .btn {
+        display: inline-block;
+        padding: 1rem 1.5rem;
+        border-radius: 9999px;
+        text-decoration: none;
+        transition: opacity 0.2s ease;
+    }
+
+    .btn:hover {
+        opacity: 0.8;
+    }
+
+    .btn--blaa {
+        background-color: #1a4096;
+        color: white;
+    }
+
+    .btn--lys {
+        background-color: #bcceff;
+        color: #ffffff;
+    }
+
+    .btn--orange {
+        background-color: #ffc26b;
+        color: #ffffff;
+    }
+</style>

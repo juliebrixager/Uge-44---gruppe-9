@@ -1,0 +1,112 @@
+---
+import RundKnap from "./rundKnap.astro";
+---
+
+<section>
+    <div class="materiale__tekst">
+        <h2>Materiale til arrangører</h2>
+        <p>Herunder finder I logoer og andet materiale til kampagneugen UGE 44 - Fokus på døden.</p>
+        <p>Vi har lavet forskellige logoer til download, så det kan tilpasses til jeres behov.</p>
+        <p>I finder også plakater, infografikker o.a. materiale, som I kan downloade og benytte jer af.</p>
+    </div>
+
+    <div class="materiale__accordions">
+        <div class="accordion">
+            <button class="accordion__knap" aria-expanded="false">
+                <span>Logoer</span>
+                <svg class="accordion__pil" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1a2e6e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </button>
+            <div class="accordion__indhold" hidden>
+                <p>Indhold om logoer her...</p>
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button class="accordion__knap" aria-expanded="false">
+                <span>Infografikker og plakater</span>
+                <svg class="accordion__pil" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1a2e6e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </button>
+            <div class="accordion__indhold" hidden>
+                <p>Vi er i gang med at udvikle årets infografikker & plakater til UGE 44 2026.</p>
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button class="accordion__knap" aria-expanded="false">
+                <span>Få inspiration</span>
+                <svg class="accordion__pil" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1a2e6e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </button>
+            <div class="accordion__indhold" hidden>
+                <p>En oversigt over forskellige spillefilm, kortfilm og dokumentarer, der handler om døden.</p>
+                <RundKnap href="mailto:info@livogdoed.dk" tekst="Hent filmlisten" />
+                <p>En oversigt over forskellige digtsamlinger, børnebøger, skønlitteratur og beretninger om døden.</p>
+                <RundKnap href="mailto:info@livogdoed.dk" tekst="Hent filmlisten" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .materiale__tekst p {
+        color: #1a2e6e;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+
+    .materiale__accordions {
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .accordion {
+        background-color: #bcceff;
+        border-radius: 8px;
+    }
+
+    .accordion__knap {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #1a2e6e;
+        font-size: 1rem;
+    }
+
+    .accordion__pil {
+        transition: transform 0.3s ease;
+        flex-shrink: 0;
+    }
+
+    .accordion__knap[aria-expanded="true"] .accordion__pil {
+        transform: rotate(180deg);
+    }
+
+    .accordion__indhold {
+        padding: 0 1.5rem 1.5rem;
+        color: #1a2e6e;
+    }
+</style>
+
+<script>
+    document.querySelectorAll(".accordion__knap").forEach((knap) => {
+        knap.addEventListener("click", () => {
+            const expanded = knap.getAttribute("aria-expanded") === "true";
+            const indhold = knap.nextElementSibling as HTMLElement;
+
+            knap.setAttribute("aria-expanded", String(!expanded));
+            indhold.hidden = expanded;
+        });
+    });
+</script>
