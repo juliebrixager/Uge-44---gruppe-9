@@ -1,9 +1,45 @@
 ---
 import "../styles/global.css";
 import PageLayout from "../layouts/PageLayout.astro";
-import andreisorgCard from "../components/andreisorgCard.astro";
+import AndreisorgCard from "../components/andreisorgCard.astro";
 ---
 
 <PageLayout heading="Arrangør tilmelding">
   <p>Er du arrangør og vil gerne tilmelde dig Uge 44, så kan du gøre det ved at udfylde</p>
+
+  <!-- introduktion -->
+
+  <!-- del din historie -->
+
+  <!-- andre i sorg -->
+  <section>
+    <h2>Mød andre i sorg</h2>
+    <AndreisorgCard
+      billede="/imgs/orangekram.png"
+      titel="Maja 18 år"
+      tekst="“Jeg mistede min far til kræft for lidt over et år siden.  Det føles stadig uvirkeligt nogle gange. I starten trak jeg mig fra mine venner og havde svært ved skolen. Det sværeste er de små ting, som når jeg gerne vil fortælle ham noget. Jeg prøver at tale mere om det nu, men det er stadig hårdt.”"
+    />
+
+    <AndreisorgCard
+      billede="/imgs/brunkram.png"
+      titel="Lucas, 21 år"
+      tekst="“Min bedste ven døde i en trafikulykke sidste år, og det kom helt pludseligt. Jeg var meget vred i starten og følte, jeg skulle være stærk for de andre. Men vi har hjulpet hinanden ved at dele minder og tale om ham. Sorgen er der stadig, men den fylder på en anden måde nu.”"
+      direction="left"
+    />
+    <AndreisorgCard
+      billede="/imgs/pinkkram.png"
+      titel="Sara 22 år"
+      tekst="“Min storesøster mistede sit barn, og det påvirkede hele familien. Jeg følte mig lidt glemt i starten og vidste ikke, hvordan jeg skulle hjælpe. Med tiden har jeg lært, at det nogle gange er nok bare at være der. Det har ændret min måde at forstå sorg på.”"
+    />
+  </section>
 </PageLayout>
+
+<style>
+  section {
+    margin: 3em 3em;
+  }
+  h2 {
+    /* padding: 1em 0.5em; */
+    color: #32487a;
+  }
+</style>

@@ -1,18 +1,21 @@
 ---
-const { img, headline, text, dire } = Astro.props;
+const { billede, titel, tekst, direction } = Astro.props;
 ---
 
 <article class={direction}>
-  <img src={img} />
   <div class="content">
-    <h3>{headline}</h3>
-    <p>{text}</p>
+    <h3>{titel}</h3>
+    <p class="tekst">{tekst}</p>
   </div>
+  <img src={billede} />
 </article>
 
 <style>
-  h3,
   p {
+    padding: 1em 1em;
+  }
+
+  h3 {
     color: #32487a;
   }
   article {
@@ -21,9 +24,17 @@ const { img, headline, text, dire } = Astro.props;
     gap: 1rem;
   }
 
+  img {
+    max-width: 50%;
+    align-self: center;
+  }
+
   @media screen and (width >= 800px) {
+    img {
+      max-width: 25%;
+    }
+
     article {
-      grid-column: span 2;
       flex-direction: row;
       align-items: center;
     }
