@@ -21,7 +21,7 @@ import RundKnap from "./rundKnap.astro";
 <style>
     section {
         max-width: 500px;
-        margin: 4rem auto;
+        margin: 4rem 2rem;
         padding: 4rem;
         background-color: #32487a;
         border-radius: 20px;
@@ -38,5 +38,13 @@ import RundKnap from "./rundKnap.astro";
         display: flex;
         justify-content: center;
         margin-top: 50px;
+    }
+
+    @media screen and (min-width: 768px) {
+        section {
+            max-width: 500px;
+            margin: 4rem auto;
+            padding: 4rem;
+        }
     }
 </style>
