@@ -1,5 +1,6 @@
 ---
 const { eventData } = Astro.props;
+import KvadratKnap from "../components/KvadratKnap.astro";
 ---
 
 <div class="eventcard-container">
@@ -9,9 +10,15 @@ const { eventData } = Astro.props;
       <p>{eventData.dato}</p>
     </div>
   </div>
-  <div class="text-container">
-    <p class="text-bold">{eventData.event}</p>
-    <p>{eventData.beskrivelse}</p>
+  <div>
+    <div class="text-container">
+      <p class="text-bold">{eventData.event}</p>
+      <p>{eventData.beskrivelse}</p>
+    </div>
+    <div class="cta-container">
+      <KvadratKnap href="#" tekst="Læs mere" />
+      <KvadratKnap href="#" tekst="Tilmelding" variant="blaa" />
+    </div>
   </div>
 </div>
 
@@ -19,6 +26,7 @@ const { eventData } = Astro.props;
   .eventcard-container {
     margin: 2rem 4rem;
     background-color: #bcceff;
+    grid-area: 1/1;
   }
 
   /* img container */
@@ -51,7 +59,7 @@ const { eventData } = Astro.props;
 
   /* text container */
   .text-container {
-    margin: 1rem;
+    margin: 2rem 1rem;
     place-self: center;
   }
   .text-bold {
@@ -59,15 +67,28 @@ const { eventData } = Astro.props;
     margin-bottom: 2ch;
   }
 
+  .cta-container {
+    position: absolute;
+    margin-left: 1rem;
+  }
+
   /* desktop view */
-  @media (width>=800px) {
+  @media (width>=900px) {
     .eventcard-container {
       display: grid;
       grid-template-columns: 2fr 1fr;
     }
+
+    .text-container {
+      min-height: 115px;
+    }
+    .cta-container {
+      position: relative;
+      top: 25px;
+    }
   }
 
-  @media (width<800px) {
+  @media (width<900px) {
     .eventcard-container {
       padding-bottom: 2rem;
     }
