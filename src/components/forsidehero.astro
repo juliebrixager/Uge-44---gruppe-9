@@ -4,7 +4,7 @@ import "../styles/global.css";
 
 <section class="hero">
   <div class="hero__center">
-    <img src="/imgs/herologo.png" alt="UGE 44 fokus på døden" class="hero__logo" />
+    <img src="/imgs/herologo.svg" alt="UGE 44 fokus på døden" class="hero__logo" />
   </div>
 
   <div class="hero__image">
@@ -16,11 +16,10 @@ import "../styles/global.css";
   .hero {
     position: relative;
     background: #bcceff;
-    min-height: 100vh;
+    min-height: 80vh;
 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 
     /* plads til header så logo ikke ryger op under */
     padding-top: 90px;
@@ -31,7 +30,6 @@ import "../styles/global.css";
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-left: 200px;
     padding-top: -50px;
     margin-top: -50px;
   }
@@ -47,7 +45,7 @@ import "../styles/global.css";
     display: flex;
     justify-content: right;
     align-items: flex-end;
-    padding: 0%;
+    padding-top: 70px;
   }
 
   .hero__image img {
@@ -55,6 +53,8 @@ import "../styles/global.css";
     max-width: 300px;
     height: auto;
     padding-top: 0;
+    margin-bottom: -80px;
+    padding-bottom: -120px;
   }
 
   @media (min-width: 768px) {
@@ -71,6 +71,8 @@ import "../styles/global.css";
       justify-content: flex-start;
       align-items: flex-start;
       flex: 1;
+      padding-left: 300px;
+      padding-bottom: 80px;
     }
 
     .hero__image {
