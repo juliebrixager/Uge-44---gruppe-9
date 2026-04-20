@@ -22,46 +22,74 @@ import "../styles/global.css";
     flex-direction: column;
     justify-content: space-between;
 
-    padding: 1.5rem;
-
     /* plads til header så logo ikke ryger op under */
-    padding-top: 100px;
+    padding-top: 90px;
   }
 
   /* centrer logo vertikalt-ish */
   .hero__center {
-    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-left: 200px;
+    padding-top: -50px;
+    margin-top: -50px;
   }
 
   /* logo styling */
   .hero__logo {
-    width: 160px;
+    width: 200px;
     height: auto;
   }
 
   /* illustration i bunden */
   .hero__image {
     display: flex;
-    justify-content: center;
+    justify-content: right;
     align-items: flex-end;
+    padding: 0%;
   }
 
   .hero__image img {
     width: 100%;
-    max-width: 420px;
+    max-width: 300px;
     height: auto;
+    padding-top: 0;
   }
 
   @media (min-width: 768px) {
+    .hero {
+      min-height: 75vh;
+
+      display: flex;
+      flex-direction: row; /* 🔥 vigtig */
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .hero__center {
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex: 1;
+    }
+
+    .hero__image {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      padding: 0;
+    }
+
     .hero__logo {
-      width: 300px;
+      width: 400px;
     }
 
     .hero__image img {
-      max-width: 600px;
+      max-width: 400px;
+      padding: 0;
+      display: block;
+      margin-bottom: -115px;
     }
   }
 </style>
