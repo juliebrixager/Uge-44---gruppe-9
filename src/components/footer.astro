@@ -3,44 +3,54 @@ import RundKnap from "./rundKnap.astro";
 ---
 
 <footer>
-    <section class="info">
-        <div>
-            <p>Har du spørgsmål?</p>
-            <RundKnap href="mailto:info@livogdoed.dk" tekst="Send os en mail" />
-        </div>
-        <div>
-            <p>Uge 44 - fokus på døden</p>
-            <p>Facebook</p>
-            <p>Instagram</p>
-        </div>
-    </section>
-    <img src="/imgs/simpellogo.png" alt="Logo" />
+  <section class="info">
+    <div>
+      <p>Har du spørgsmål?</p>
+      <RundKnap href="mailto:info@livogdoed.dk" tekst="Send os en mail" />
+    </div>
+    <div>
+      <p>Uge 44 - fokus på døden</p>
+      <p><a href="https://www.instagram.com/uge_44/">Instagram</a></p>
+      <p><a href="https://www.facebook.com/profile.php?id=61587160924694">Facebook</a></p>
+    </div>
+  </section>
+  <img src="/imgs/simpellogo.png" alt="Logo" />
 </footer>
 
 <style>
-    footer {
-        background-color: #bcceff;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-    }
-    .info {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-    img {
-        align-self: flex-end;
-    }
-    p {
-        color: #1a4096;
-        padding: 5px;
-    }
+  footer {
+    background-color: #bcceff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    font-family: "Montserrat", sans-serif;
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  img {
+    align-self: flex-end;
+  }
+  p {
+    color: #1a4096;
+    padding: 5px;
+  }
 
-    @media screen and (min-width: 768px) {
-        footer {
-            flex-direction: row;
-            justify-content: space-between;
-        }
+  a {
+    color: #1a4096;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  @media screen and (min-width: 768px) {
+    footer {
+      flex-direction: row;
+      justify-content: space-between;
     }
+  }
 </style>

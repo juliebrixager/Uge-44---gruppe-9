@@ -6,3 +6,25 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+p {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family:
+    glacial indifference,
+    sans-serif;
+}
+
+nav {
+  font-family: "montserrat", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
