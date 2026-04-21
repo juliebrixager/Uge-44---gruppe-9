@@ -1,28 +1,21 @@
 ---
 import "../styles/global.css";
 import PageLayout from "../layouts/PageLayout.astro";
+import Introduktion from "../components/introduktion.astro";
 import AndreisorgCard from "../components/andreisorgCard.astro";
 import Deldinhistorie from "../components/deldinhistorie.astro";
 ---
 
 <PageLayout heading="Arrangør tilmelding">
-  <!-- introduktion -->
-  <section>
-    <h1>Virtuel Sorggruppe</h1>
-    <p>
-      Det kan være svært at vide præcis hvordan man bedst støtter og hjælper en person man holder af, som har mistet og står i en stor sorg. Det kan samtidig være svært for den sørgende at kommunikere sine behov, og det kan derfor være hårdt for både
-      den sørgende og pårørende når nogen går bort.
-    </p>
-    <p>
-      Vi har derfor oprettet din “virtuelle sorggruppe”, hvor du uanset din situation kan læse om andres erfaringer og blive klogere på hvilke behov, tanker og følelser som oftest fylder, og som kan være en indgangsvinkel til den bedst mulige støtte.
-    </p>
-  </section>
+  <Introduktion
+    title="Virtuel Sorggruppe"
+    tekst1="Det kan være svært at vide præcis hvordan man bedst støtter og hjælper en person man holder af, som har mistet og står i en stor sorg. Det kan samtidig være svært for den sørgende at kommunikere sine behov, og det kan derfor være hårdt for både
+      den sørgende og pårørende når nogen går bort."
+    tekst2="Vi har derfor oprettet din “virtuelle sorggruppe”, hvor du uanset din situation kan læse om andres erfaringer og blive klogere på hvilke behov, tanker og følelser som oftest fylder, og som kan være en indgangsvinkel til den bedst mulige støtte."
+  />
 
   <Deldinhistorie />
 
-  <!-- del din historie -->
-
-  <!-- andre i sorg -->
   <section>
     <h2>Mød andre i sorg</h2>
     <AndreisorgCard
@@ -50,6 +43,9 @@ import Deldinhistorie from "../components/deldinhistorie.astro";
     color: #1a4096;
     padding: 0.5em 0;
   }
+  h2 {
+    color: #32487a;
+  }
   p {
     padding: 1em 0;
   }
@@ -57,8 +53,11 @@ import Deldinhistorie from "../components/deldinhistorie.astro";
     margin: 3em 3em;
     padding: 2em 0;
   }
-  h2 {
-    /* padding: 1em 0.5em; */
-    color: #32487a;
+
+  @media screen and (min-width: 768px) {
+    h2 {
+      max-width: 900px;
+      margin: 0 auto;
+    }
   }
 </style>

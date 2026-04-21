@@ -3,9 +3,6 @@
 ---
 
 <article class="background">
-  <!-- <h3>Har du lyst til at dele din historie?</h3>
-  <p>Send din historie ind til os, så du kan hjælpe andre</p> -->
-
   <div class="flex">
     <form>
       <h3>Har du lyst til at dele din historie?</h3>
@@ -35,6 +32,62 @@
       padding: 3em 0;
     }
 
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.25em;
+    }
+
+    p {
+      font-size: 0.95rem;
+      margin-bottom: 0.5em;
+    }
+
+    @media screen and (width < 800px) {
+      .flex {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 1.5em;
+        gap: 2em;
+      }
+
+      form {
+        width: 100%;
+      }
+
+      .form {
+        display: flex;
+        flex-direction: column;
+        margin-top: 1em;
+        gap: 0.75em;
+      }
+
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0.8em 1em;
+        border: 0;
+        border-radius: 4px;
+        font-size: 1rem;
+      }
+
+      textarea {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0.8em 1em;
+        min-height: 140px;
+        border: 0;
+        border-radius: 4px;
+        font-size: 1rem;
+        resize: vertical;
+      }
+
+      img {
+        max-width: 180px;
+        height: auto;
+      }
+    }
+
     @media screen and (width >= 800px) {
       article {
       }
@@ -42,14 +95,11 @@
       .flex {
         display: flex;
         justify-content: space-evenly;
-        /* display: grid;
-        grid-template-columns: 1fr 1fr; */
       }
 
       .form {
         display: flex;
         flex-direction: column;
-        /* margin-left: 5em; */
         margin-top: 1em;
       }
 
