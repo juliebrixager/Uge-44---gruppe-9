@@ -1,12 +1,12 @@
 ---
-
+const { title, undertitle, tekst1, tekst2 } = Astro.props;
 ---
 
 <section>
-    <h1>Tag snakken</h1>
-    <h2>Gør den svære snak nem(mere) - tips og aktiviteter</h2>
-    <p>Det kan være både svært og grænseoverskridende at tale om døden. Samtidig kan det for mange være hårdt at tale om og fokus sættes måske hurtigt på noget andet for ikke at ødelægge den gode stemning.</p>
-    <p>Vi har i den sammenhæng samlet en række tips og aktiviteter som kan flytte blik og fokus, skabe en hyggelig stemning, og hjælpe med at gøre en svær snak nem(mere)</p>
+    <h1>{title}</h1>
+    <h2>{undertitle}</h2>
+    <p>{tekst1}</p>
+    <p>{tekst2}</p>
 </section>
 
 <style>

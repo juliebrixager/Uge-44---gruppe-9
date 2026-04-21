@@ -1,5 +1,5 @@
 ---
-const { billede, titel, tekst, direction } = Astro.props;
+const { titel, tekst, billede, direction } = Astro.props;
 ---
 
 <article class={direction}>
@@ -11,17 +11,21 @@ const { billede, titel, tekst, direction } = Astro.props;
 </article>
 
 <style>
-  p {
-    padding: 1em 1em;
-  }
-
   h3 {
     color: #32487a;
   }
+
+  p {
+    padding: 1em 0;
+    line-height: 1.5rem;
+  }
+
   article {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    margin: 2rem auto;
+    margin-bottom: 4rem;
   }
 
   img {
@@ -37,11 +41,10 @@ const { billede, titel, tekst, direction } = Astro.props;
     article {
       flex-direction: row;
       align-items: center;
+      max-width: 900px;
     }
     article.left {
       flex-direction: row-reverse;
-      margin: 0;
-      padding: 0;
     }
   }
 </style>
