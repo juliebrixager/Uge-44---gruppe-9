@@ -19,6 +19,9 @@
         <label>
           <textarea placeholder="*Historie" name="besked" required></textarea>
         </label>
+        <div class="button-wrapper">
+          <button type="submit" class="submit-knap">Send</button>
+        </div>
       </div>
     </form>
 
@@ -40,6 +43,26 @@
     p {
       font-size: 0.95rem;
       margin-bottom: 0.5em;
+    }
+    .submit-knap {
+      display: inline-block;
+      padding: 1rem 1.5rem;
+      background-color: #ffc26b;
+      color: #ffffff;
+      text-decoration: none;
+      border: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .submit-knap:hover {
+      opacity: 0.8;
+    }
+
+    .button-wrapper {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: -2rem;
+      padding-right: 2rem;
     }
 
     @media screen and (width < 800px) {
