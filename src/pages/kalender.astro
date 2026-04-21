@@ -3,9 +3,25 @@ import "../styles/global.css";
 import PageLayout from "../layouts/PageLayout.astro";
 import Kalenderhero from "../components/kalenderhero.astro";
 import EventCardContainer from "../components/eventcardcontainer.astro";
+import EventFilter from "../components/EventFilter.astro";
+
+const options = {
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9zaG55cmltZ3hkbW5pc3ZidW1kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY2NTAxMDksImV4cCI6MjA5MjIyNjEwOX0.PPYEFke7RLUAq2CR_8fjeZic3gkhAdTsxkTKsrbA9UI",
+  },
+};
+
+const url = "https://oshnyrimgxdmnisvbumd.supabase.co/rest/v1/uge44";
+const response = await fetch(url, options);
+const data = await response.json();
 ---
 
 <PageLayout heading="Arrangør tilmelding">
   <Kalenderhero />
-  <EventCardContainer />
+  <EventFilter events={data} />
+  <EventCardContainer events={data} />
 </PageLayout>
+
+<script>
+  console.log("HEJ DU GAMLE FIL");
+</script>
