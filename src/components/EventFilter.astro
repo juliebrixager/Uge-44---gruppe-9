@@ -1,0 +1,64 @@
+---
+const { events } = Astro.props;
+const regions = [...new Set(events.map((e) => e.region))];
+---
+
+<div class="event-filter">
+  <h2>Find begivenheder nær dig</h2>
+  <p>Filtrér</p>
+
+  <select id="regionFilter">
+    <option value="placering">Placering</option>
+    {regions.map((region) => <option value={region}>{region}</option>)}
+  </select>
+</div>
+
+<script>
+  console.log("HEJ DU GAMLE FIL");
+  const filter = document.getElementById("regionFilter");
+
+  filter?.addEventListener("change", (e) => {
+    const value = e.target.value;
+    console.log("Selected region:", value);
+    const events = document.querySelectorAll("[data-event]");
+
+    events.forEach((event) => {
+      const region = event.dataset.region;
+      console.log("EVENT", event);
+      console.log("VALUE", value);
+      //   event.classList.add("hidden");
+      if (value === "placering") {
+        event.classList.remove("hidden");
+      } else {
+        if (value === region) {
+          event.classList.remove("hidden");
+        } else {
+          event.classList.add("hidden");
+        }
+      }
+    });
+  });
+</script>
+
+<style>
+  .event-filter {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 2rem 4rem;
+    align-items: flex-start;
+  }
+
+  select {
+    background-color: #bcceff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+  }
+
+  h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1a4096;
+  }
+</style>

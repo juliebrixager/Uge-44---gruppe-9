@@ -1,100 +1,177 @@
 ---
 const { eventData } = Astro.props;
 import KvadratKnap from "../components/KvadratKnap.astro";
+
+// normaliser key
+const key = eventData.event.trim().toLowerCase();
+
+const descriptions = {
+  "når livet slutter – samtalesalon": `
+En åben og tryg samtalesalon, hvor vi sammen sætter ord på det, der kan være svært at tale om: døden, sorgen og det at miste.
+Gennem guidede spørgsmål og fælles refleksion skaber vi et rum, hvor alle kan dele tanker, erfaringer og følelser.
+Der er plads til både stilhed, eftertanke og samtale i et respektfuldt fællesskab.
+  `,
+
+  "breve til dem vi savner": `
+I denne workshop inviteres du til at skrive et personligt brev til én du har mistet.
+Gennem skriveøvelser får du mulighed for at bearbejde følelser og minder.
+Der er plads til både refleksion og frivillig deling i et trygt rum.
+  `,
+
+  "døden i forskellige kulturer": `
+Hvordan forstår og markerer vi døden rundt om i verden?
+Dette oplæg giver indblik i forskellige kulturelle traditioner, ritualer og perspektiver på døden – fra sorg og afsked til fejring af livet.
+Vi åbner for dialog om, hvordan vores egne forestillinger er formet.
+  `,
+
+  "etik i livets afslutning": `
+Paneldebat om aktiv dødshjælp, hospice og værdighed.
+Vi diskuterer de svære etiske dilemmaer i livets sidste fase.
+Der vil være mulighed for spørgsmål og refleksion.
+  `,
+};
+
+const longText = descriptions[key];
 ---
 
-<div class="eventcard-container">
-  <div class="img-container">
-    <img src={eventData.img} alt="" />
+<div class="event-wrapper" data-event data-region={eventData.region}>
+  <div class="eventcard-container">
+    <div class="img-container">
+      <img src={eventData.img} alt="" />
+      <div>
+        <p>{eventData.dato}</p>
+      </div>
+    </div>
+
     <div>
-      <p>{eventData.dato}</p>
+      <div class="text-container">
+        <p class="text-bold">{eventData.event}</p>
+        <p>{eventData.beskrivelse}</p>
+      </div>
+
+      <div class="cta-container">
+        <button class="read-more-btn">Læs mere</button>
+
+        <KvadratKnap href="https://www.facebook.com/profile.php?id=61587160924694" tekst="Tilmelding" variant="blaa" target="_blank" />
+      </div>
     </div>
   </div>
-  <div>
-    <div class="text-container">
-      <p class="text-bold">{eventData.event}</p>
-      <p>{eventData.beskrivelse}</p>
-    </div>
-    <div class="cta-container">
-      <KvadratKnap href="#" tekst="Læs mere" />
-      <KvadratKnap href="https://www.facebook.com/profile.php?id=61587160924694" tekst="Tilmelding" variant="blaa" target="_blank" />
-    </div>
+
+  <div class="event-dropdown hidden">
+    <h3>{eventData.event}</h3>
+
+    {longText?.split("\n").map((p) => <p>{p}</p>)}
   </div>
-</div>
 
-<style>
-  .eventcard-container {
-    margin: 2rem 4rem;
-    background-color: #bcceff;
-    grid-area: 1/1;
-  }
+  <style>
+    .hidden {
+      display: none;
+    }
 
-  /* img container */
-  .img-container {
-    display: grid;
-  }
+    .event-wrapper {
+      margin: 2rem 4rem;
+    }
 
-  .img-container img {
-    grid-area: 1/1;
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-  }
-
-  .img-container div {
-    grid-area: 1/1;
-    background-color: #fff;
-    width: 120px;
-    height: 80px;
-    left: 30px;
-    position: relative;
-  }
-
-  .img-container p {
-    place-self: center;
-    font-weight: 400;
-    margin-top: 30px;
-    font-size: 18px;
-  }
-
-  /* text container */
-  .text-container {
-    margin: 2rem 1rem;
-    place-self: center;
-  }
-  .text-bold {
-    font-weight: 600;
-    margin-bottom: 2ch;
-  }
-
-  .cta-container {
-    position: absolute;
-    margin-left: 1rem;
-  }
-
-  a {
-    font-family:;
-  }
-
-  /* desktop view */
-  @media (width>=900px) {
     .eventcard-container {
+      background-color: #bcceff;
+    }
+
+    /* img */
+    .img-container {
       display: grid;
-      grid-template-columns: 2fr 1fr;
     }
 
-    .text-container {
-      min-height: 115px;
+    .img-container img {
+      grid-area: 1/1;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
     }
-    .cta-container {
+
+    .img-container div {
+      grid-area: 1/1;
+      background-color: #fff;
+      width: 120px;
+      height: 80px;
+      left: 30px;
       position: relative;
-      top: 25px;
     }
-  }
 
-  @media (width<900px) {
-    .eventcard-container {
-      padding-bottom: 2rem;
+    .img-container p {
+      margin-top: 30px;
+      font-size: 18px;
+      left: 30px;
+      position: relative;
+      font-weight: 400;
     }
-  }
-</style>
+
+    /* text */
+    .text-container {
+      margin: 2rem 1rem;
+    }
+
+    .text-bold {
+      font-weight: 600;
+      margin-bottom: 2ch;
+    }
+
+    .cta-container {
+      margin-left: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    /* dropdown */
+    .event-dropdown {
+      margin-top: 1rem;
+      padding: 2rem;
+      background-color: #bcceff;
+      border: 1px solid #1a4096;
+    }
+
+    .event-dropdown h3 {
+      margin-bottom: 1rem;
+    }
+
+    .event-dropdown p {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .read-more-btn {
+      background-color: #f4b35d;
+      border: none;
+
+      padding: 14px 28px;
+      font-size: 16px;
+      font-weight: 400;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      height: 48px;
+      cursor: pointer;
+      font-family: "montserrat", sans-serif;
+    }
+    /* desktop */
+    @media (width>=900px) {
+      .eventcard-container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+      }
+    }
+  </style>
+
+  <script>
+    const wrappers = document.querySelectorAll(".event-wrapper");
+
+    wrappers.forEach((wrapper) => {
+      const btn = wrapper.querySelector(".read-more-btn");
+      const dropdown = wrapper.querySelector(".event-dropdown");
+
+      btn?.addEventListener("click", () => {
+        dropdown.classList.toggle("hidden");
+      });
+    });
+  </script>
+</div>
